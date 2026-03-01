@@ -1,3 +1,16 @@
+'''
+calculate electricity bill based on units consumed
+0-100 -> 5rs/unit
+101-300 -> 7rs/unit
+above 300 -> 10rs/unit
+if bill> 5000 then give 5% discount
+
+'''
+
+#take unit from user(int num)
+#apply all the conditions and calculate the total bill amount
+#check other condition for applying discount
+
 units=int(input("Enter units:"))
 amount=0
 if units>0:
