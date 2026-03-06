@@ -1,0 +1,194 @@
+##functions for string datatype
+
+
+#lower
+s='  Python123#@&*'
+s.lower()#returns lowercase if alphabet but doesn't change numbers or special characters value
+
+#upper
+s.upper()#returns uppercase if alphabet but doesn't change numbers or special characters  value
+
+#capitalize
+help(str.capitalize)
+'pTHON'.capitalize()#first letter is capitalized, rest are made lowercase
+
+#title
+'pTHON'.title()#first letter is capitalized, rest are made lowercase
+
+#strip
+s.strip()#Return a copy of the string with leading and trailing whitespace removed.
+print('Python'.strip('P'))#If chars is given and not None, remove characters in chars instead.
+
+#lstrip
+print('    Python'.lstrip())
+print('Python'.lstrip('P'))
+
+#rstrip
+'Python   '.rstrip()
+'Python'.rstrip('n')
+
+#replace
+s.replace('123', 'abc')#Return a copy with all occurrences of substring old replaced by new.
+
+#index
+s.index('abc')#returns lowest index value of the substring found in string s
+#Raises ValueError when the substring is not found.
+
+#find
+#same as index but,
+#returns -1 if substring is not found
+
+#split
+str='I LOVE PYTHON PROGRAMMING LANGUAGE'
+str.split()#splits wherever space is there
+str.split('PYTHON')#splits wherever PYTHON is there in the string(will remove it from the list)
+str.split('-')#splits wherever hyphen is present in the string
+
+#join
+list_of_strs=['I','Love','Myself']
+' '.join(list_of_strs)#joins the strings of a list/any iterable abject with ' '(space) in the middle of them
+
+#startswith
+
+
+#endswith
+#isdigit
+#isalpha
+#islower
+#isupper
+
+
+##functions for list datatype
+
+#1.append
+l1=[1,2,3,4]
+l1.append(5)#adds at the end of a list
+
+#2.insert
+l1.insert(3,5)#adds element at the index given (index, element)
+
+#3.extend
+l2=[6,7,8]
+l1.extend(l2)#joins two lists
+
+#4.pop
+l1.pop()#removes last element and returns it
+l1.pop(1)#removes element at index 1
+#gives index error when element not present
+
+#5.remove
+l1.remove(5)#removes first occurrence of a duplicate character
+l1.remove(8)#gives value error if element not present
+
+#6.clear 
+#clears a list, returns empty list
+#removes items from memory space too
+
+#7.sort
+l2.extend(l1)
+l2.sort()#ascending order, default
+l2.sort(reverse=True)#descending order
+
+#sorted
+#sorts a collection that is not a list\
+
+
+#8.reverse
+l2.reverse()#in place recersing of the position 
+
+#9.index
+#returns error if an element is not present in a list
+
+#10.count
+#returns 0 if an element is not present in a list
+
+
+##functions for tuple
+'''
+1.index
+2.count
+'''
+
+##functions for set
+
+#1.add
+seet={1,2,3,1.5}
+seet.add(1)#no effect since element already exists
+seet.add(4)#added in the set
+#throws error if we try to add a mutable collection
+
+#2.remove
+seet={1,2,True,False,0,10,3+9j}
+seet.remove(10)#removes element form set, if it doesn't exist, keyError is raised
+
+
+#3.discard
+seet.discard(3)#removes element from set, if not present, no error is thrown
+
+#4.pop:Randomly eliminates the values single value at a time
+seet.pop()#doesn't take any arguments
+
+#5.clear
+#reemoves elements from set
+
+#6.union
+set1={1,2,3}
+seet.union(set1)#takes the union of two sets
+#returns a new set with the elements from the set and all others (other sets too)
+
+#7.intersection
+seet.intersection(set1)#takes intersection of two sets
+
+#8.difference
+#returns uncommon elements from the first set
+set1.difference(seet)#will return set1={1,2,3}
+seet.difference(set1)#will return seet=set()
+
+#9.symmetric_difference
+#returns a new set with elements in either the set or others but not both
+set1.symmetric_difference(seet)#returns {1,2,3}
+seet.symmetric_difference(set1)#returns {1,2,3}
+set2={2,3,4}
+set1.symmetric_difference(set2)#returns {1,4}
+set1.symmetric_difference(set1)#returns set() which is an empty set
+
+
+##functions for dictionary
+
+#1.get
+d={1:1,2:2,(1,2,3):(1,2,3)}
+d.get(2)#if key doesn't exist, error is not thrown, default=None is returned
+
+#2.pop
+user={
+    'username':'user123',
+    'password':'*****',
+    'location':'IN'
+}
+
+#user.pop('location')
+user.pop('username','password')#only pops username
+#raises keyError if key not found
+
+
+#3.popitem
+user.popitem()#location with value is removed
+#last in first out
+#raises error if dict is empty
+
+#4.clear
+
+
+#5.update
+user.update({'username':'user123'})
+
+
+#6.keys
+user.keys()
+
+#7.values
+user.values()
+
+#8.items
+user.items()#key-value pairs in tuple
+
