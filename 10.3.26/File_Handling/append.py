@@ -1,0 +1,6 @@
+file=open('jecrc.txt','a+')
+file.write("whatever i don't have much i want to say")
+file.write("except")
+file.write("My milkshake brings all the boys to the yard")
+file.write("and they're like is better than yours")
+file.close()
