@@ -1,0 +1,72 @@
+'''
+---Operrator overloading: It is a phenomenon of making the operators to work on user-defined data types by invoking respective magic methods
+
+---Magic Method/Dundar: It is a special type of mthod in which double underscore will be there at the start and end of the name.
+
+
+---Examples:
+
+    1.__add__
+    2.__sub__
+    3.__mul__
+    4.__floordiv__
+    5.__truediv__
+    6.__mod__
+
+---If we don't use operator overloading then what will happen?
+    For using the operators inside user-defined data types, we use operator overloading.
+
+---Synatx:
+    class ClassName:
+        def __init__(self,val):
+            self.val=val
+        
+        def __add__(self, ano_obj):
+            return self.val+ano_obj.vala
+    
+    obj1=ClassName(val1)
+    obj2=ClassName(val2)
+    print(obj1+obj2) ##obj1.__add__(obj2)
+'''
+
+class MyDataType:
+    def __init__(self,val):
+        self.val=val
+
+    def __str__(self):
+        return str(self.val)     
+    def __add__(self, *other):
+        sum=self.val
+        for i in other:
+            sum+=i.val
+        return MyDataType(sum)
+    
+    # def add(self,*args):
+    #     sum=self.val
+    #     for i in args:
+    #         sum+=i.val
+    #     return sum
+
+    def __sub__(self, *ano_ob):
+        sub=self.val
+        for i in ano_ob:
+            sub-=i.val
+        return MyDataType(sub)
+    def __mul__(self, *ono_ob):
+        mul=self.val
+        for i in ono_ob:
+            mul*=i.val
+        return MyDataType(mul)
+    def __truediv__(self, ano_ob):
+        return self.val/ano_ob.val
+    def __floordiv__(self, ano_obj):
+        return self.val//ano_obj.val
+    def __mod__(self, other):
+        return self.val%other.val
+print(MyDataType(10.10)+MyDataType(20)+MyDataType(30))
+# print(MyDataType.add(MyDataType(10),MyDataType(20),MyDataType(30.3)))
+print(MyDataType(0)-MyDataType(9))
+print(MyDataType(5)* MyDataType(5))
+print(MyDataType(255)/MyDataType(5))
+print(MyDataType(255.8)//MyDataType(5))
+print(MyDataType(30)%MyDataType(3))
